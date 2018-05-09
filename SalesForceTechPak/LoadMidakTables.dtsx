@@ -8,12 +8,12 @@
   DTS:Description="DTS Wizard-generated package"
   DTS:DTSID="{893A5383-4813-41BA-A472-F0BABAA27E8B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LastModifiedProductVersion="14.0.3006.16"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="LoadMidakTables"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{DC1F52C4-4523-41D5-B639-C3D43E71D729}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{79CBFDCA-85BC-42EE-BDFF-D8C3C5BC2EDD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -976,7 +976,7 @@
                       refId="Package\Data Flow Task\Destination 2 - Employer_Pak_Info.Inputs[Destination Input].Columns[Beginning_Days]"
                       cachedDataType="numeric"
                       cachedName="Beginning_Days"
-                      cachedPrecision="5"
+                      cachedPrecision="6"
                       cachedScale="1"
                       externalMetadataColumnId="Package\Data Flow Task\Destination 2 - Employer_Pak_Info.Inputs[Destination Input].ExternalColumns[Beginning_Days]"
                       lineageId="Package\Data Flow Task\Source 2 - Employer_Pak_Info.Outputs[OLE DB Source Output].Columns[Beginning_Days]" />
@@ -1091,7 +1091,7 @@
                       refId="Package\Data Flow Task\Destination 2 - Employer_Pak_Info.Inputs[Destination Input].ExternalColumns[Beginning_Days]"
                       dataType="numeric"
                       name="Beginning_Days"
-                      precision="5"
+                      precision="6"
                       scale="1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Destination 2 - Employer_Pak_Info.Inputs[Destination Input].ExternalColumns[Amount_Paid]"
@@ -4139,7 +4139,7 @@
                       externalMetadataColumnId="Package\Data Flow Task\Source 2 - Employer_Pak_Info.Outputs[OLE DB Source Output].ExternalColumns[Beginning_Days]"
                       lineageId="Package\Data Flow Task\Source 2 - Employer_Pak_Info.Outputs[OLE DB Source Output].Columns[Beginning_Days]"
                       name="Beginning_Days"
-                      precision="5"
+                      precision="6"
                       scale="1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
@@ -4292,7 +4292,7 @@
                       refId="Package\Data Flow Task\Source 2 - Employer_Pak_Info.Outputs[OLE DB Source Output].ExternalColumns[Beginning_Days]"
                       dataType="numeric"
                       name="Beginning_Days"
-                      precision="5"
+                      precision="6"
                       scale="1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Source 2 - Employer_Pak_Info.Outputs[OLE DB Source Output].ExternalColumns[Amount_Paid]"
@@ -4388,7 +4388,7 @@
                       dataType="numeric"
                       lineageId="Package\Data Flow Task\Source 2 - Employer_Pak_Info.Outputs[OLE DB Source Error Output].Columns[Beginning_Days]"
                       name="Beginning_Days"
-                      precision="5"
+                      precision="6"
                       scale="1" />
                     <outputColumn
                       refId="Package\Data Flow Task\Source 2 - Employer_Pak_Info.Outputs[OLE DB Source Error Output].Columns[Amount_Paid]"
@@ -6972,7 +6972,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B6BBCCA7-046D-44D5-8C2C-CA542AC1955D}"
-          SQLTask:SqlStatementSource="CREATE TABLE [SalesForceTechPak].[dbo].[Activity_Item] (&#xA;[Item_Index] int NOT NULL,&#xA;[Activity_ID] char(10),&#xA;[Start_Date] datetime,&#xA;[End_Date] datetime,&#xA;[Location_ID] int,&#xA;[Instructor_ID] int,&#xA;[Coordinator_ID] int,&#xA;[Activity_Description] varchar(60),&#xA;[Vendor_ID] char(12),&#xA;[Min_Enrollment] smallint,&#xA;[Max_Enrollment] smallint,&#xA;[Status] char(1),&#xA;[Special_Class] char(1),&#xA;[Special_Class_Num] smallint,&#xA;[Day_Night] char(1),&#xA;[Flate_Rate] money,&#xA;[Flat_Rate] money,&#xA;[track_id] char(10),&#xA;[crsewr_vendor] char(10),&#xA;[crsewr_version] char(10),&#xA;[class_level] varchar(20),&#xA;[course_id] int,&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Item_Index] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Employer] (&#xA;[Employer_Id] int NOT NULL,&#xA;[Employer_Name] char(50),&#xA;[Address] varchar(200),&#xA;[City] char(40),&#xA;[State] char(2),&#xA;[Zip] char(10),&#xA;[Country] char(18),&#xA;[Accounting_Contact_ID] int,&#xA;[Training_Contact_ID] int,&#xA;[Sales_Rep_ID] int,&#xA;[Outstanding_Balance] money,&#xA;[Overdue_Balance] money,&#xA;[Billgroup] char(2),&#xA;[Company_Group] int,&#xA;[Location_Code] char(25),&#xA;[Main_Phone] char(24),&#xA;[Alt_Phone] char(24),&#xA;[LOB_id] numeric(4,0),&#xA;[Type_Id] numeric(3,0),&#xA;[Sent_to_Accounting] char(1),&#xA;[Address2] varchar(200),&#xA;[EnteredID] char(15),&#xA;[EnteredDate] datetime,&#xA;[LogID] char(15),&#xA;[LogDateTime] datetime,&#xA;[Pak_Type_ID] numeric(18,0),&#xA;[Pak_Status] char(1),&#xA;[Credit] char(1),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Employer_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Employer_Pak_Info] (&#xA;[Employer_Id] int NOT NULL,&#xA;[Date_Purchased] datetime,&#xA;[Total_Value] money,&#xA;[Daily_Rate] money,&#xA;[Beginning_Days] decimal(5,1),&#xA;[Amount_Paid] money,&#xA;[Expiration_Date] datetime,&#xA;[Extended] char(1),&#xA;[Take_as_Revenue] datetime,&#xA;[No_of_Vouchers] numeric(18,0),&#xA;[Voucher_Delivery] datetime,&#xA;[No_of_Books] numeric(18,0),&#xA;[Book_Delivery] datetime,&#xA;[No_of_Tests] numeric(18,0),&#xA;[Test_Delivery] datetime,&#xA;[Mentoring_Days] numeric(18,0),&#xA;[Mentoring_Dates] char(50),&#xA;[Pak_Note] char(150),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Employer_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Person] (&#xA;[Person_Id] int NOT NULL,&#xA;[First_Name] char(30),&#xA;[Middle_Name] char(2),&#xA;[Last_Name] char(30),&#xA;[Salutation] char(4),&#xA;[Gender] char(1),&#xA;[Nickname] char(20),&#xA;[Address] varchar(200),&#xA;[City] char(24),&#xA;[State] char(2),&#xA;[Zip] char(10),&#xA;[Country] char(18),&#xA;[Employer_Id] int,&#xA;[Employer_Name] char(50),&#xA;[Bill_Group] char(2),&#xA;[Job_Title] varchar(40),&#xA;[Department] varchar(50),&#xA;[Sales_Rep_Id] int,&#xA;[Address_Is_Home] char(1),&#xA;[EMail] char(60),&#xA;[Priority] char(1),&#xA;[EnteredID] char(15),&#xA;[EnteredDate] datetime,&#xA;[LogID] char(15),&#xA;[LogDateTime] datetime,&#xA;[Status] char(1),&#xA;[Type_ID] numeric(3,0),&#xA;[Address2] varchar(200),&#xA;[Mailing_List] char(1),&#xA;[Fax_List] char(1),&#xA;[Active] char(1),&#xA;[Credit] char(1),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Person_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Sales_Journal] (&#xA;[Txn_Number] numeric(6,0) NOT NULL,&#xA;[Customer_ID] char(20) NOT NULL,&#xA;[Item_ID] char(18) NOT NULL,&#xA;[Date] char(8) NOT NULL,&#xA;[Description] char(125),&#xA;[Customer_Name] char(50),&#xA;[Ship_Name] char(60),&#xA;[Ship_Address1] char(60),&#xA;[Ship_Address2] char(60),&#xA;[Ship_City] char(20),&#xA;[Ship_State] char(2),&#xA;[Ship_Zipcode] char(10),&#xA;[Customer_PO] char(18),&#xA;[Sales_Rep_ID] int,&#xA;[Number_Distributions] int,&#xA;[GL_Account] char(15),&#xA;[Quantity] numeric(5,1),&#xA;[Unit_Price] money,&#xA;[Amount] money,&#xA;[Invoice_Note] varchar(255),&#xA;[Note_Prints_Bottom] char(5),&#xA;[Invoice_Number] char(20),&#xA;[Transaction_Number] char(20),&#xA;[Sales_rep] char(16),&#xA;[Sent_to_Acct] char(1),&#xA;[Sent_Acct_Date] datetime,&#xA;[Country] char(18),&#xA;[Person_ID] int,&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Txn_Number] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;GO&#xA;&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Sales_Rep] (&#xA;[Sales_Rep_Id] int NOT NULL,&#xA;[Old_Rep_Id] char(18),&#xA;[Accounting_Rep_ID] char(20),&#xA;[Sent_to_Accounting] char(1),&#xA;[Active] char(1),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Sales_Rep_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;GO&#xA;&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Student_Class] (&#xA;[Person_Id] int NOT NULL,&#xA;[Item_Index] int NOT NULL,&#xA;[Referral_Type] numeric(3,0),&#xA;[Kit_ID] int,&#xA;[Payment_Type] char(1),&#xA;[Payment_Number] char(25),&#xA;[Payment_Name] char(40),&#xA;[Payment_Amount] char(18),&#xA;[BilledAmount] money,&#xA;[BilledComment] varchar(60),&#xA;[Status] char(2),&#xA;[Entered_By] char(15),&#xA;[Entered_Date] datetime,&#xA;[LogId] char(15),&#xA;[LogDateTime] datetime,&#xA;[ConfirmedId] char(15),&#xA;[ConfirmedDateTime] datetime,&#xA;[Sent_To_Accounting] char(1),&#xA;[Sent_Acct_Datetime] datetime,&#xA;[Audit_Reason] varchar(120),&#xA;[Referral_Name] char(30),&#xA;[Walkin] char(1),&#xA;[Send_Conf] char(1),&#xA;[BilledDays] decimal(5,1),&#xA;[Employer_Id] int,&#xA;[email_con_sent] char(1),&#xA;[email_con_sent_date] datetime,&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Person_Id] ASC,&#xA;&#x9;[Item_Index] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="CREATE TABLE [SalesForceTechPak].[dbo].[Activity_Item] (&#xA;[Item_Index] int NOT NULL,&#xA;[Activity_ID] char(10),&#xA;[Start_Date] datetime,&#xA;[End_Date] datetime,&#xA;[Location_ID] int,&#xA;[Instructor_ID] int,&#xA;[Coordinator_ID] int,&#xA;[Activity_Description] varchar(60),&#xA;[Vendor_ID] char(12),&#xA;[Min_Enrollment] smallint,&#xA;[Max_Enrollment] smallint,&#xA;[Status] char(1),&#xA;[Special_Class] char(1),&#xA;[Special_Class_Num] smallint,&#xA;[Day_Night] char(1),&#xA;[Flate_Rate] money,&#xA;[Flat_Rate] money,&#xA;[track_id] char(10),&#xA;[crsewr_vendor] char(10),&#xA;[crsewr_version] char(10),&#xA;[class_level] varchar(20),&#xA;[course_id] int,&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Item_Index] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Employer] (&#xA;[Employer_Id] int NOT NULL,&#xA;[Employer_Name] char(50),&#xA;[Address] varchar(200),&#xA;[City] char(40),&#xA;[State] char(2),&#xA;[Zip] char(10),&#xA;[Country] char(18),&#xA;[Accounting_Contact_ID] int,&#xA;[Training_Contact_ID] int,&#xA;[Sales_Rep_ID] int,&#xA;[Outstanding_Balance] money,&#xA;[Overdue_Balance] money,&#xA;[Billgroup] char(2),&#xA;[Company_Group] int,&#xA;[Location_Code] char(25),&#xA;[Main_Phone] char(24),&#xA;[Alt_Phone] char(24),&#xA;[LOB_id] numeric(4,0),&#xA;[Type_Id] numeric(3,0),&#xA;[Sent_to_Accounting] char(1),&#xA;[Address2] varchar(200),&#xA;[EnteredID] char(15),&#xA;[EnteredDate] datetime,&#xA;[LogID] char(15),&#xA;[LogDateTime] datetime,&#xA;[Pak_Type_ID] numeric(18,0),&#xA;[Pak_Status] char(1),&#xA;[Credit] char(1),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Employer_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Employer_Pak_Info] (&#xA;[Employer_Id] int NOT NULL,&#xA;[Date_Purchased] datetime,&#xA;[Total_Value] money,&#xA;[Daily_Rate] money,&#xA;[Beginning_Days] decimal(6,1),&#xA;[Amount_Paid] money,&#xA;[Expiration_Date] datetime,&#xA;[Extended] char(1),&#xA;[Take_as_Revenue] datetime,&#xA;[No_of_Vouchers] numeric(18,0),&#xA;[Voucher_Delivery] datetime,&#xA;[No_of_Books] numeric(18,0),&#xA;[Book_Delivery] datetime,&#xA;[No_of_Tests] numeric(18,0),&#xA;[Test_Delivery] datetime,&#xA;[Mentoring_Days] numeric(18,0),&#xA;[Mentoring_Dates] char(50),&#xA;[Pak_Note] char(150),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Employer_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Person] (&#xA;[Person_Id] int NOT NULL,&#xA;[First_Name] char(30),&#xA;[Middle_Name] char(2),&#xA;[Last_Name] char(30),&#xA;[Salutation] char(4),&#xA;[Gender] char(1),&#xA;[Nickname] char(20),&#xA;[Address] varchar(200),&#xA;[City] char(24),&#xA;[State] char(2),&#xA;[Zip] char(10),&#xA;[Country] char(18),&#xA;[Employer_Id] int,&#xA;[Employer_Name] char(50),&#xA;[Bill_Group] char(2),&#xA;[Job_Title] varchar(40),&#xA;[Department] varchar(50),&#xA;[Sales_Rep_Id] int,&#xA;[Address_Is_Home] char(1),&#xA;[EMail] char(60),&#xA;[Priority] char(1),&#xA;[EnteredID] char(15),&#xA;[EnteredDate] datetime,&#xA;[LogID] char(15),&#xA;[LogDateTime] datetime,&#xA;[Status] char(1),&#xA;[Type_ID] numeric(3,0),&#xA;[Address2] varchar(200),&#xA;[Mailing_List] char(1),&#xA;[Fax_List] char(1),&#xA;[Active] char(1),&#xA;[Credit] char(1),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Person_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;&#xA;GO&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Sales_Journal] (&#xA;[Txn_Number] numeric(6,0) NOT NULL,&#xA;[Customer_ID] char(20) NOT NULL,&#xA;[Item_ID] char(18) NOT NULL,&#xA;[Date] char(8) NOT NULL,&#xA;[Description] char(125),&#xA;[Customer_Name] char(50),&#xA;[Ship_Name] char(60),&#xA;[Ship_Address1] char(60),&#xA;[Ship_Address2] char(60),&#xA;[Ship_City] char(20),&#xA;[Ship_State] char(2),&#xA;[Ship_Zipcode] char(10),&#xA;[Customer_PO] char(18),&#xA;[Sales_Rep_ID] int,&#xA;[Number_Distributions] int,&#xA;[GL_Account] char(15),&#xA;[Quantity] numeric(5,1),&#xA;[Unit_Price] money,&#xA;[Amount] money,&#xA;[Invoice_Note] varchar(255),&#xA;[Note_Prints_Bottom] char(5),&#xA;[Invoice_Number] char(20),&#xA;[Transaction_Number] char(20),&#xA;[Sales_rep] char(16),&#xA;[Sent_to_Acct] char(1),&#xA;[Sent_Acct_Date] datetime,&#xA;[Country] char(18),&#xA;[Person_ID] int,&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Txn_Number] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;GO&#xA;&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Sales_Rep] (&#xA;[Sales_Rep_Id] int NOT NULL,&#xA;[Old_Rep_Id] char(18),&#xA;[Accounting_Rep_ID] char(20),&#xA;[Sent_to_Accounting] char(1),&#xA;[Active] char(1),&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Sales_Rep_Id] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;GO&#xA;&#xA;CREATE TABLE [SalesForceTechPak].[dbo].[Student_Class] (&#xA;[Person_Id] int NOT NULL,&#xA;[Item_Index] int NOT NULL,&#xA;[Referral_Type] numeric(3,0),&#xA;[Kit_ID] int,&#xA;[Payment_Type] char(1),&#xA;[Payment_Number] char(25),&#xA;[Payment_Name] char(40),&#xA;[Payment_Amount] char(18),&#xA;[BilledAmount] money,&#xA;[BilledComment] varchar(60),&#xA;[Status] char(2),&#xA;[Entered_By] char(15),&#xA;[Entered_Date] datetime,&#xA;[LogId] char(15),&#xA;[LogDateTime] datetime,&#xA;[ConfirmedId] char(15),&#xA;[ConfirmedDateTime] datetime,&#xA;[Sent_To_Accounting] char(1),&#xA;[Sent_Acct_Datetime] datetime,&#xA;[Audit_Reason] varchar(120),&#xA;[Referral_Name] char(30),&#xA;[Walkin] char(1),&#xA;[Send_Conf] char(1),&#xA;[BilledDays] decimal(5,1),&#xA;[Employer_Id] int,&#xA;[email_con_sent] char(1),&#xA;[email_con_sent_date] datetime,&#xA;PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[Person_Id] ASC,&#xA;&#x9;[Item_Index] ASC&#xA;)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]&#xA;) ON [PRIMARY]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -7049,6 +7049,32 @@
           Id="Package\Refresh Tech_Pak_Control tables"
           TopLeft="5.5,254.405660377359" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="73.8396226415094,212.745283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.452830188679243,41.6603773584906"
+              Start="0,0"
+              End="-0.452830188679243,34.1603773584906">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8301886792453" />
+                  <mssgle:LineSegment
+                    End="-0.452830188679243,20.8301886792453" />
+                  <mssgle:LineSegment
+                    End="-0.452830188679243,34.1603773584906" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[{3515085F-1D30-48B5-A51F-0CF5E26D6498\}]"
           TopLeft="73.8396226415094,131.084905660377">
           <EdgeLayout.Curve>
@@ -7094,32 +7120,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="73.8396226415094,212.745283018868">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-0.452830188679243,41.6603773584906"
-              Start="0,0"
-              End="-0.452830188679243,34.1603773584906">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.8301886792453" />
-                  <mssgle:LineSegment
-                    End="-0.452830188679243,20.8301886792453" />
-                  <mssgle:LineSegment
-                    End="-0.452830188679243,34.1603773584906" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -7130,12 +7130,28 @@
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="136,44"
+          Id="Package\Data Flow Task\Source - Activity_Item"
+          TopLeft="345.952830188679,156.594339622642" />
+        <NodeLayout
+          Size="136,44"
           Id="Package\Data Flow Task\Source 2 - Employer_Pak_Info"
           TopLeft="175.72641509434,156.594339622642" />
         <NodeLayout
           Size="136,44"
-          Id="Package\Data Flow Task\Source 1 - Employer"
-          TopLeft="856.669811320755,156.594339622642" />
+          Id="Package\Data Flow Task\Destination 1 - Employer"
+          TopLeft="856.669811320755,238.254716981132" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Data Flow Task\Destination 2 - Employer_Pak_Info"
+          TopLeft="175.72641509434,238.254716981132" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Data Flow Task\Source 4 - Sales_Journal"
+          TopLeft="5.5,156.594339622642" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Data Flow Task\Source 3 - Person"
+          TopLeft="686.443396226415,156.594339622642" />
         <NodeLayout
           Size="136,44"
           Id="Package\Data Flow Task\Destination 3 - Person"
@@ -7146,91 +7162,31 @@
           TopLeft="516.216981132075,5.5" />
         <NodeLayout
           Size="136,44"
-          Id="Package\Data Flow Task\Destination 5 - Sales_Rep"
-          TopLeft="516.216981132075,87.1603773584906" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\Data Flow Task\Destination 1 - Employer"
-          TopLeft="856.669811320755,238.254716981132" />
-        <NodeLayout
-          Size="136,44"
           Id="Package\Data Flow Task\Destination 4 - Sales_Journal"
           TopLeft="5.5,238.254716981132" />
         <NodeLayout
           Size="136,44"
-          Id="Package\Data Flow Task\Destination 2 - Employer_Pak_Info"
-          TopLeft="175.72641509434,238.254716981132" />
+          Id="Package\Data Flow Task\Destination 5 - Sales_Rep"
+          TopLeft="516.216981132075,87.1603773584906" />
         <NodeLayout
           Size="136,44"
           Id="Package\Data Flow Task\Source 6 - Student_Class"
           TopLeft="1026.93396226415,156.594339622642" />
         <NodeLayout
           Size="136,44"
-          Id="Package\Data Flow Task\Source 3 - Person"
-          TopLeft="686.443396226415,156.594339622642" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\Data Flow Task\Destination 6 - Student_Class"
-          TopLeft="1026.93396226415,238.254716981132" />
+          Id="Package\Data Flow Task\Source 1 - Employer"
+          TopLeft="856.669811320755,156.594339622642" />
         <NodeLayout
           Size="136,44"
           Id="Package\Data Flow Task\Destination - Activity_Item"
           TopLeft="345.952830188679,238.254716981132" />
         <NodeLayout
           Size="136,44"
-          Id="Package\Data Flow Task\Source 4 - Sales_Journal"
-          TopLeft="5.5,156.594339622642" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\Data Flow Task\Source - Activity_Item"
-          TopLeft="345.952830188679,156.594339622642" />
+          Id="Package\Data Flow Task\Destination 6 - Student_Class"
+          TopLeft="1026.93396226415,238.254716981132" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
-          TopLeft="924.556603773585,200.518867924528">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.7358490566038"
-              Start="0,0"
-              End="0,30.2358490566038">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.2358490566038" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
-          TopLeft="243.61320754717,200.518867924528">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.7358490566038"
-              Start="0,0"
-              End="0,30.2358490566038">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.2358490566038" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output4]"
-          TopLeft="73.3867924528302,200.518867924528">
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output6]"
+          TopLeft="1094.82075471698,200.518867924528">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7273,8 +7229,74 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output4]"
+          TopLeft="73.3867924528302,200.518867924528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.7358490566038"
+              Start="0,0"
+              End="0,30.2358490566038">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.2358490566038" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output3]"
           TopLeft="754.330188679245,200.518867924528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.7358490566038"
+              Start="0,0"
+              End="0,30.2358490566038">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.2358490566038" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+          TopLeft="243.61320754717,200.518867924528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.7358490566038"
+              Start="0,0"
+              End="0,30.2358490566038">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.2358490566038" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="924.556603773585,200.518867924528">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7316,30 +7338,47 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output6]"
-          TopLeft="1094.82075471698,200.518867924528">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.7358490566038"
-              Start="0,0"
-              End="0,30.2358490566038">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.2358490566038" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Source 2 - Employer_Pak_Info">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Destination 2 - Employer_Pak_Info">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Destination 4 - Sales_Journal">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
