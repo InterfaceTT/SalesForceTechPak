@@ -1,0 +1,637 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/6/2025 8:34:45 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JEFFVM"
+  DTS:CreatorName="PHOENIX\jeffj"
+  DTS:DTSID="{FC77AF7B-D787-467B-8FF7-15306DBD66B2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{03B0367B-780B-46EB-A9DE-6538D80230F0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[phxdw03-2.msdb]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9F90D662-268F-44A4-ACD3-3A7F9183B1F2}"
+      DTS:ObjectName="phxdw03-2.msdb">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::Phxdw032Msdb_ServerName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=phxdw03-2;Initial Catalog=msdb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9F90D662-268F-44A4-ACD3-3A7F9183B1F2}phxdw03-2.msdb;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[phxdw03-2.ReportServer]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{63EF86B5-D337-4D6F-B510-F3317D6CF988}"
+      DTS:ObjectName="phxdw03-2.ReportServer">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::Phxdw032ReportServer_ServerName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=phxdw03-2;Initial Catalog=ReportServer;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{63EF86B5-D337-4D6F-B510-F3317D6CF988}phxdw03-2.ReportServer;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PHXDW03-2.SalesForceTechPak]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{12608AEA-6E0C-44A9-9D7B-8C5D4FA4A67F}"
+      DTS:ObjectName="PHXDW03-2.SalesForceTechPak">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::PHXDW032SalesForceTechPak_ServerName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PHXDW03-2;Initial Catalog=SalesForceTechPak;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{12608AEA-6E0C-44A9-9D7B-8C5D4FA4A67F}PHXDW03-2.SalesForceTechPak2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{D5D2DF40-A3AF-4272-A33A-F3016CD2D321}"
+      DTS:ObjectName="DayofMonthtoRun">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{2F22F045-C8B3-4781-A11E-3DAEE4F997AB}"
+      DTS:ObjectName="Phxdw032Msdb_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">phxdw03-2</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{FF845DEC-7D26-44FB-8398-769A6A239536}"
+      DTS:ObjectName="Phxdw032ReportServer_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">phxdw03-2</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{A96D38FA-A9D8-4E4D-8025-11892708A79A}"
+      DTS:ObjectName="PHXDW032SalesForceTechPak_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">PHXDW03-2</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FDFDD135-88F0-45A7-95C8-C8A6AECD71D7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentDayofMonth">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E958180F-E485-4CEE-84E6-588DB8BB06F0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderPaths">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{04660911-7043-4A83-B392-6017A14F6A9C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MSSubReportJobName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3308EA3A-7E4F-4B56-9D69-94CC3897EEF4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Path">
+      <DTS:VariableValue
+        DTS:DataType="8">\\phxdw03-2\TechPakMSSub\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7AEA1BFF-4895-435D-B4E8-464EBC2F701E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TechPakJobName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop through Folders"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{8AE14C5B-ECD7-41B0-A20F-AF04AB2B386F}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop through Folders">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{F1FA8925-0A7E-4342-A491-9E23D05BB667}"
+        DTS:ObjectName="{F1FA8925-0A7E-4342-A491-9E23D05BB667}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::FolderPaths" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop through Folders\Create Folder"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{4E32B4EE-2D0D-44EB-A7B9-1775DBEB7D03}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create Folder"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="CreateDirectory"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::Path"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{BBA7E8B3-D392-4089-B6C9-BE1A6ECDC981}"
+          DTS:ObjectName="{BBA7E8B3-D392-4089-B6C9-BE1A6ECDC981}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Path" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Current Day of Month"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D7343392-DBFA-4009-8AD9-82147CED77AE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Current Day of Month"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12608AEA-6E0C-44A9-9D7B-8C5D4FA4A67F}"
+          SQLTask:SqlStatementSource="SELECT Day(GETDate()) DayofMonth"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::CurrentDayofMonth" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Folder Names from Query"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F290BE6B-3BA7-4CED-96AA-8886D31DF839}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Folder Names from Query"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12608AEA-6E0C-44A9-9D7B-8C5D4FA4A67F}"
+          SQLTask:SqlStatementSource="SELECT Path&#xA;FROM dbo.v_TechPakMSSubFolderGenerator&#xA;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::FolderPaths" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Run MSSub Reports"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d2b94cf1-b8f1-4a2f-a682-542e38bf4f79}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Run MSSub Reports"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{63EF86B5-D337-4D6F-B510-F3317D6CF988}"
+          SQLTask:SqlStatementSource="SELECT CONVERT(NVARCHAR(1000), rsch.[ScheduleID]) jobname&#xA;FROM [Catalog] c &#xA; INNER JOIN [Subscriptions] s&#xA; ON c.[ItemID] = s.[Report_OID]&#xA; INNER JOIN [ReportSchedule] rsch&#xA; ON s.[SubscriptionID] = rsch.[SubscriptionID]&#xA;WHERE c.NAME = 'Microsoft Subscription Student Report'&#xA;AND s.[Description] = 'Monthly Run into MonthlybyRepCompany'&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="jobname"
+            SQLTask:DtsVariableName="User::MSSubReportJobName" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Run TechPak Reports"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3FE857A5-C5D1-4958-8356-9836EBFC1D42}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Run TechPak Reports"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{63EF86B5-D337-4D6F-B510-F3317D6CF988}"
+          SQLTask:SqlStatementSource="SELECT CONVERT(NVARCHAR(1000), rsch.[ScheduleID]) jobname&#xA;FROM [Catalog] c &#xA;&#x9;INNER JOIN&#x9;[Subscriptions] s&#xA;&#x9;ON c.[ItemID] = s.[Report_OID]&#xA;&#x9;INNER JOIN [ReportSchedule] rsch&#xA;&#x9;ON s.[SubscriptionID] = rsch.[SubscriptionID]&#xA;WHERE c.NAME = 'Main Customer Report with Tech Pak Notes'&#xA;AND s.[Description] = 'Monthly Run into MonthlybyRepCompany'&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="jobname"
+            SQLTask:DtsVariableName="User::TechPakJobName" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start MSSub Report"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{486c3005-0fd7-4627-b2d9-fa2ba07bea50}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start MSSub Report"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9F90D662-268F-44A4-ACD3-3A7F9183B1F2}"
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_start_job @job_name = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MSSubReportJobName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start TechPak Report"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8B95A598-878B-4F4B-A1F8-C7DF662AFD5E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start TechPak Report"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9F90D662-268F-44A4-ACD3-3A7F9183B1F2}"
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_start_job @job_name = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TechPakJobName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Wait for 5 minutes"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{38687998-D5A2-404A-A22B-9EA19A79C391}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Wait for 5 minutes"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12608AEA-6E0C-44A9-9D7B-8C5D4FA4A67F}"
+          SQLTask:SqlStatementSource="WAITFOR DELAY '00:05:00'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E3F85B2D-9F91-4082-8696-95E0296C3896}"
+      DTS:From="Package\Get Folder Names from Query"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop through Folders" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{205FCE4D-3476-4A1F-95AB-3065D53B4CB0}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[$Package::DayofMonthtoRun] ==  @[User::CurrentDayofMonth]"
+      DTS:From="Package\Get Current Day of Month"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get Folder Names from Query" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{7E087153-8537-4A7A-B93F-768A1CD1355E}"
+      DTS:From="Package\Foreach Loop through Folders"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Run TechPak Reports" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{8330CC70-E1FE-4EF4-AC55-D2EDADF64124}"
+      DTS:From="Package\Run TechPak Reports"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Start TechPak Report" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{ECC9C2B4-7B3F-48EE-87D5-6C05D77FBFBA}"
+      DTS:From="Package\Start TechPak Report"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Wait for 5 minutes" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{72584B5C-09D5-4755-A9BF-1ECA786424F9}"
+      DTS:From="Package\Run MSSub Reports"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Start MSSub Report" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{2A791496-A9A9-454A-9224-51CF44CF2FFC}"
+      DTS:From="Package\Wait for 5 minutes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Run MSSub Reports" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Foreach Loop through Folders\Create Folder"
+          TopLeft="45.3333299060663,33.0666613666218" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="242,132.666666666667"
+          Size="242,176"
+          Id="Package\Foreach Loop through Folders"
+          TopLeft="184.999997243285,235.299995792508" />
+        <NodeLayout
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\Get Current Day of Month"
+          TopLeft="189.374997178093,27.3333328684171" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Get Folder Names from Query"
+          TopLeft="186.874997215346,128.049997710288" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Run MSSub Reports"
+          TopLeft="226.874996619299,697.649992782175" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Run TechPak Reports"
+          TopLeft="224.374996656552,464.216658449272" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Start MSSub Report"
+          TopLeft="225.624996637925,785.883325348398" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Start TechPak Report"
+          TopLeft="229.999996572733,557.849991991818" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Wait for 5 minutes"
+          TopLeft="230.62499656342,625.999995350838" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="297.541663882013,170.716664376955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.45833336127231,64.5833314155533"
+              Start="0,0"
+              End="8.45833336127231,57.0833314155533">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.2916657077767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.2916657077767"
+                    Point2="0,32.2916657077767"
+                    Point3="4,32.2916657077767" />
+                  <mssgle:LineSegment
+                    End="4.45833336127231,32.2916657077767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.45833336127231,32.2916657077767"
+                    Point2="8.45833336127231,32.2916657077767"
+                    Point3="8.45833336127231,36.2916657077767" />
+                  <mssgle:LineSegment
+                    End="8.45833336127231,57.0833314155533" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="293.624997196719,69.9999995350838">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.0499981752038"
+              Start="0,0"
+              End="0,50.5499981752038">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5499981752038" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.2749990876019,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="306.187496949919,411.299995792508">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.916662656764"
+              Start="0,0"
+              End="0,45.416662656764">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.416662656764" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="309.187496614643,506.883325115939">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.966666875879"
+              Start="0,0"
+              End="0,43.466666875879">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.466666875879" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="312.979163234743,600.516658658485">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.4833366923531"
+              Start="0,0"
+              End="0,17.9833366923531">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9833366923531" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="310.249996628612,740.316659448842">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5666658995555"
+              Start="0,0"
+              End="0,38.0666658995555">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0666658995555" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="311.416663258026,668.666662017504">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.9833307646711"
+              Start="0,0"
+              End="0,21.4833307646711">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4833307646711" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
