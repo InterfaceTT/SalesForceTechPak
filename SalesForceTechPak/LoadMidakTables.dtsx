@@ -13,7 +13,7 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="LoadMidakTables"
   DTS:VersionBuild="15"
-  DTS:VersionGUID="{6894CE68-4AFB-472A-972E-543B33E2F55D}">
+  DTS:VersionGUID="{4446718D-DA9A-4AE5-871B-2DD7A2A161C2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
